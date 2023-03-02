@@ -1,24 +1,23 @@
-import type { AppProps } from "next/app";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import type {AppProps} from "next/app";
+import {ThirdwebProvider} from "@thirdweb-dev/react";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 import "../styles/globals.css";
+import {ReactQueryProvider, queryClient} from "../src/providers/react-query.provider";
 
 // This is the chain your dApp will work on.
 // Change this to the chain your app is built for.
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
 const activeChain = 'mumbai';
 
-const queryClient = new QueryClient();
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-      <QueryClientProvider client={queryClient}>
-    <ThirdwebProvider activeChain={activeChain}  queryClient={queryClient}>
-      <Component {...pageProps} />
-    </ThirdwebProvider>
-      </QueryClientProvider>
-  );
+function MyApp({Component, pageProps}: AppProps) {
+    return (
+        <ReactQueryProvider>
+            <ThirdwebProvider activeChain={activeChain} queryClient={queryClient}>
+                <Component {...pageProps} />
+            </ThirdwebProvider>
+        </ReactQueryProvider>
+    );
 }
 
 export default MyApp;
