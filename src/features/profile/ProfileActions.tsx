@@ -1,14 +1,13 @@
 import {
-    ConnectWallet, useAddress,
+    ConnectWallet,
+    useAddress,
     useContract,
     useContractEvents,
     useContractRead,
     useContractWrite,
     Web3Button
 } from "@thirdweb-dev/react";
-import {ethers} from "ethers";
 import {CONTRACT_ADDRESS} from "../../constants/main.constants";
-import {useState} from "react";
 
 export const ProfileActions = () => {
     const address = useAddress();
