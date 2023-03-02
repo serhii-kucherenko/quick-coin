@@ -55,7 +55,7 @@ contract QuickCoin is PlatformFee {
         address payable recipient = payable(getAddressFromApiKey(apiKey));
 
         (address feeRecipient, uint16 feeBps) = getPlatformFeeInfo();
-        uint256 commissionAmount = (msg.value * feeBps) / 1000;
+        uint256 commissionAmount = (msg.value * feeBps) / 100;
         uint256 netAmount = msg.value - commissionAmount;
 
         recipient.transfer(netAmount);
