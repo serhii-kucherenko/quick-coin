@@ -16,6 +16,7 @@ const Home: NextPage = () => {
                 e-commerce sites to easily accept cryptocurrency payments. Here is how it works:</p>
 
                 <ol>
+                    {/* eslint-disable react/no-unescaped-entities */}
                     <li><p>A merchant registers an account on QuickCoin's website using their MetaMask wallet. This
                         generates a unique API key for their account.</p></li>
                     <li><p>The merchant integrates QuickCoin's SDK into their e-commerce site, using the API key to
