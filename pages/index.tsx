@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <h2>Welcome to the QuickCoin</h2>
 
       <div>
-        <p>Sure, here's a simple step-by-step explanation of how QuickCoin works:</p>
+        <p>How does QuickCoin works?</p>
         <ol>
           <li>Sign up: Customers sign up on the QuickCoin website and generate an API key.</li>
           <li>Integration: Customers integrate the QuickCoin SDK into their e-commerce website using their API key.</li>
