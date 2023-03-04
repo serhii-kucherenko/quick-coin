@@ -22,7 +22,7 @@ const Home: NextPage = () => {
           <li>Commission: QuickCoin charges a commission fee for each transaction.</li>
           <li>
             Payment to merchant: QuickCoin converts the cryptocurrency payment into the merchant's preferred currency and transfers the funds to the
-            merchant's bank account.
+            merchant's wallet.
           </li>
           <li>Dashboard: Merchants can view transaction details and manage their account through a user-friendly dashboard.</li>
         </ol>
