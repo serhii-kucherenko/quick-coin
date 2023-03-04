@@ -9,47 +9,25 @@ const Home: NextPage = () => {
     <DefaultLayout>
       <h2>Welcome to the QuickCoin</h2>
 
-      <div className="markdown prose w-full break-words dark:prose-invert dark">
-        <p>QuickCoin is a service that enables e-commerce sites to easily accept cryptocurrency payments. Here is how it works:</p>
-
+      <div>
+        <p>Sure, here's a simple step-by-step explanation of how QuickCoin works:</p>
         <ol>
-          {/* eslint-disable react/no-unescaped-entities */}
+          <li>Sign up: Customers sign up on the QuickCoin website and generate an API key.</li>
+          <li>Integration: Customers integrate the QuickCoin SDK into their e-commerce website using their API key.</li>
           <li>
-            <p>
-              A merchant registers an account on QuickCoin's website using their MetaMask wallet. This generates a unique API key for their account.
-            </p>
+            Checkout: Customers add items to their shopping cart and click "Buy with QuickCoin". The customer is redirected to a QuickCoin checkout
+            page.
           </li>
+          <li>Payment: Customers select their desired cryptocurrency wallet and complete the payment process.</li>
+          <li>Commission: QuickCoin charges a commission fee for each transaction.</li>
           <li>
-            <p>
-              The merchant integrates QuickCoin's SDK into their e-commerce site, using the API key to authenticate transactions. When a user clicks
-              on the "Buy with Crypto" button, they are redirected to QuickCoin's checkout page.
-            </p>
+            Payment to merchant: QuickCoin converts the cryptocurrency payment into the merchant's preferred currency and transfers the funds to the
+            merchant's bank account.
           </li>
-          <li>
-            <p>
-              On the checkout page, the user connects their MetaMask wallet and selects the cryptocurrency they wish to pay with. QuickCoin generates
-              a new, unique address for each transaction and displays it to the user, along with the amount due and any fees.
-            </p>
-          </li>
-          <li>
-            <p>The user sends the cryptocurrency to the displayed address, and QuickCoin monitors the blockchain for incoming transactions.</p>
-          </li>
-          <li>
-            <p>
-              Once the payment is confirmed, QuickCoin notifies the merchant's site via a webhook, and the user is redirected back to the merchant's
-              site to complete the purchase.
-            </p>
-          </li>
-          <li>
-            <p>The cryptocurrency is transferred to the merchant's wallet, minus any commission fees set by QuickCoin.</p>
-          </li>
+          <li>Dashboard: Merchants can view transaction details and manage their account through a user-friendly dashboard.</li>
         </ol>
-        <p>
-          Overall, QuickCoin simplifies the process of accepting cryptocurrency payments for merchants, while providing a seamless and secure
-          experience for users.
-        </p>
+        <p>That's it! QuickCoin simplifies the process of accepting cryptocurrency payments for e-commerce businesses.</p>
       </div>
-
       <button onClick={() => router.push('/profile')}>Try It Out</button>
     </DefaultLayout>
   );
