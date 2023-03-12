@@ -41,7 +41,7 @@ yarn-error.log*
 .idea
 
 # Hardhat files
-cache
-artifacts
+src/contracts/cache
+src/contracts/artifacts
 
 .env

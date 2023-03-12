@@ -1,7 +1,8 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   paths: {
-    sources: './src/contracts',
+    root: './src/contracts',
+    sources: './',
   },
   solidity: {
     version: '0.8.9',

@@ -2,20 +2,26 @@
 pragma solidity ^0.8.9;
 
 import "@thirdweb-dev/contracts/extension/PlatformFee.sol";
+import "@thirdweb-dev/contracts/extension/Initializable.sol";
+import "@thirdweb-dev/contracts/extension/Upgradeable.sol";
 
-contract QuickCoin is PlatformFee {
+contract QuickCoin is Upgradeable, Initializable, PlatformFee {
     mapping(address => string) private apiKeys;
     mapping(string => address) private apiKeyToAddress;
+    address public owner;
 
     event CommissionChanged(uint256 newCommission);
     event ApiKeyGenerated(address indexed account, string apiKey);
     event PaymentProcessed(address indexed buyer, string apiKey, uint256 amount);
     event Log(string apiKey, address indexed sender);
-    address public owner;
 
-    constructor() {
+    function initialize() public initializer {
         owner = msg.sender;
         _setupPlatformFeeInfo(0x66353cc9331D1BA1aFCfC6F31cC2116FfE102cE2, 0);
+    }
+
+    function _authorizeUpgrade(address) internal view override {
+        require(msg.sender == owner);
     }
 
     function _canSetPlatformFeeInfo() internal view virtual override returns (bool) {

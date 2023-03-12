@@ -33,6 +33,7 @@
     "@types/react": "^18",
     "eslint": "^8.29.0",
     "eslint-config-next": "^13",
+    "forge-std": "^1.1.2",
     "hardhat": "^2.10.1",
     "prettier": "^2.8.4",
     "typescript": "^4.9.4"
