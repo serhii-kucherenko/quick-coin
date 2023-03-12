@@ -12,12 +12,8 @@ import {CONTRACT_ADDRESS} from "../../constants/main.constants";
 export const ProfileActions = () => {
     const address = useAddress();
     const {contract} = useContract(CONTRACT_ADDRESS);
-    const {data: apiKey, isLoading} = useContractRead(address ? contract : undefined, "getApiKey", address)
+    const {data: apiKey, isLoading, refetch} = useContractRead(address ? contract : undefined, "getApiKey", address)
     const {data: event} = useContractEvents(contract, "ApiKeyGenerated")
-    const {mutateAsync} = useContractWrite(
-        contract,
-        "processPayment",
-    );
 
     return (
         <>
@@ -28,6 +24,7 @@ export const ProfileActions = () => {
                 action={(contract) => contract.call("generateApiKey")}
                 onSuccess={(response) => {
                     alert("success")
+                    refetch();
                     console.log(response)
                 }}
                 onError={() => {

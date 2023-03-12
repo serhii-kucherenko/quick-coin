@@ -3,6 +3,8 @@ module.exports = {
   paths: {
     root: './src/contracts',
     sources: './',
+    cache: './cache',
+    artifacts: './artifacts',
   },
   solidity: {
     version: '0.8.9',

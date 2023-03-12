@@ -43,5 +43,6 @@ yarn-error.log*
 # Hardhat files
 src/contracts/cache
 src/contracts/artifacts
+cache
 
 .env
